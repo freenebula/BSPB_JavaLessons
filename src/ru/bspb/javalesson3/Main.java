@@ -25,7 +25,7 @@ public class Main {
         for (int i = 0; i < clients.length; i++) {
             int d = 0;
             for (int j = i+1; j < clients.length; j++) {
-                if (clients[i].equals(clients[j]) == true) {
+                if (clients[i].equals(clients[j])) {
                     d++;
                 }
             }
