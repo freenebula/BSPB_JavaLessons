@@ -17,8 +17,9 @@ public class Main {
                 new Client("Владимиров Олег Викторович", 1992, "м")
         };
 
-        compare(clients);
         sort(clients);
+        compare(clients);
+
     }
 
     public static void compare (Client[] clients){
