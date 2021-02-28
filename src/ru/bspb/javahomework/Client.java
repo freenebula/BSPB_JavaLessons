@@ -1,16 +1,42 @@
 package ru.bspb.javahomework;
 
-public class Client implements Comparable<Client>{
+public abstract class Client implements Comparable<Client>{
+    private ClientType clientType;
     private String name;
     private int year;
+    private Sex sex;
+    private long ogrn;
 
-    public Client() {}
+    public ClientType getClientType() {
+        return clientType;
+    }
 
-//    public Client(ClientType clientType, String name, int year) {
-//        this.clientType = clientType;
-//        this.name = name;
-//        this.year = year;
+    public void setClientType(ClientType clientType) {
+        this.clientType = clientType;
+    }
 
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
+    public long getOgrn() {
+        return ogrn;
+    }
+
+    public void setOgrn(long ogrn) {
+        this.ogrn = ogrn;
+    }
+//    public Client() {}
+
+    public Client(ClientType clientType, String name, int year) {
+        this.clientType = clientType;
+        this.name = name;
+        this.year = year;
+    }
 
     public String getName() {
         return name;
@@ -27,8 +53,6 @@ public class Client implements Comparable<Client>{
     public void setYear(int year) {
         this.year = year;
     }
-
-
 
         @Override
     public int compareTo(Client o) {

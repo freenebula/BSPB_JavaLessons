@@ -13,8 +13,10 @@ public enum ClientType {
     public String getClienType() {
         return clientType;
     }
+
     @Override
     public  String toString() {
         return clientType;
     }
+
 }
