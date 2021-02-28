@@ -1,40 +1,40 @@
-package ru.bspb.javalesson3;
+package ru.bspb.javahomework;
 
 import java.util.Objects;
 
-public class Client {
-    private String name;
-    private int year;
-    private String sex;
+public class FL extends Client {
+    private final String name;
+    private final int year;
+    private Sex sex;
 
-    public Client(String name, int year, String sex) {
+    public FL(String name, int year, Sex sex) {
         this.name = name;
         this.year = year;
         this.sex = sex;
     }
 
 
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public int getYear() {
+//        return year;
+//    }
+//
+//    public void setYear(int year) {
+//        this.year = year;
+//    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public String getSex() {
+    public Sex getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Sex sex) {
         this.sex = sex;
     }
 
@@ -47,7 +47,7 @@ public class Client {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Client client = (Client) o;
+        FL client = (FL) o;
         return year == client.year && name.equals(client.name) && sex.equals(client.sex);
     }
 
@@ -56,4 +56,6 @@ public class Client {
     public int hashCode() {
         return Objects.hash(name, year, sex);
     }
+
+
 }
