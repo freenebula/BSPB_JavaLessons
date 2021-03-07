@@ -5,20 +5,19 @@ import java.util.Objects;
 public class ClientFL extends Client {
 
 
-    public ClientFL(ClientType clientType, String name, int year, Sex sex) {
-        super(clientType, name,year);
+    public ClientFL(String name, int year, Sex sex) {
+        super(name,year);
         setSex(sex);
     }
 
+    private Sex sex;
 
-    public int compareTo(Client o) {
-        if (this.getYear() > o.getYear()){
-            return +1;
-        } else if (this.getYear() == o.getYear()) {
-            return 0;
-        } else {
-            return -1;
-        }
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
     }
 
     @Override
@@ -31,7 +30,7 @@ public class ClientFL extends Client {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ClientFL client = (ClientFL) o;
-        return /*getClientType() == client.getClientType() &&*/ getYear() == client.getYear() && getName().equals(client.getName()) && getSex().equals(client.getSex());
+        return getYear() == client.getYear() && getName().equals(client.getName()) && getSex().equals(client.getSex());
     }
 
 

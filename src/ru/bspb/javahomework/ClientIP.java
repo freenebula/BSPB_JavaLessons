@@ -3,16 +3,22 @@ package ru.bspb.javahomework;
 import java.util.Objects;
 
 public class ClientIP extends Client{
-//    private final String name;
-//    private final int year;
-//    private long ogrn;
-//    private String sex;
 
-    public ClientIP(ClientType clientType, String name, int year, long ogrn) {
-        super(clientType, name, year);
+
+    public ClientIP(String name, int year, long ogrn) {
+        super(name, year);
         setOgrn(ogrn);
     }
 
+    private long ogrn;
+
+    public long getOgrn() {
+        return ogrn;
+    }
+
+    public void setOgrn(long ogrn) {
+        this.ogrn = ogrn;
+    }
 
     @Override
     public String toString() {
@@ -24,7 +30,7 @@ public class ClientIP extends Client{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ClientIP client = (ClientIP) o;
-        return /*getClientType() == client.getClientType() &&*/ getYear() == client.getYear() && getName().equals(client.getName()) && getOgrn() == client.getOgrn();
+        return getYear() == client.getYear() && getName().equals(client.getName()) && getOgrn() == client.getOgrn();
     }
 
 
