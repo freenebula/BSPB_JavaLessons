@@ -2,7 +2,7 @@ package ru.bspb.javahomework;
 
 import java.util.Objects;
 
-public class ClientFL extends Client {
+public class ClientFL<T> extends Client {
 
 
     public ClientFL(String name, int year, Sex sex) {

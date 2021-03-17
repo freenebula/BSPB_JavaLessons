@@ -2,7 +2,7 @@ package ru.bspb.javahomework;
 
 import java.util.Objects;
 
-public class ClientIP extends Client{
+public class ClientIP<T> extends Client{
 
 
     public ClientIP(String name, int year, long ogrn) {

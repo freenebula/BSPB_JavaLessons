@@ -1,6 +1,6 @@
 package ru.bspb.javahomework;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Utils {
 
@@ -24,9 +24,6 @@ public class Utils {
         }
     }
 
-
-
-
     static int countOrig (Client[] clients) {
         int a = 0;
         for (int i = 0; i < clients.length; i++) {
@@ -43,7 +40,6 @@ public class Utils {
         }
         return a;
     }
-
 
     public static Client[] clientDublicateDelete (Client[] clients){
         int a = countOrig(clients);
@@ -64,7 +60,6 @@ public class Utils {
         }
         return clients2;
     }
-
 
     static int countSex (Client[] clients) {
         int a = 0;
@@ -90,8 +85,7 @@ public class Utils {
         return clients2;
     }
 
-
-    public static void clientsSort(Object[] o) {
+    public static void clientsSortOld(Object[] o) {
         Arrays.sort(o);
     }
 
@@ -101,6 +95,36 @@ public class Utils {
         }
     }
 
+    public static void clientsDublicateDelete (ArrayList<Client> o){
+        Set<Client> uniClients = new LinkedHashSet<>(o);
+        o.clear();
+        o.addAll(uniClients);
+    }
+
+    public static void clientsPrint (ArrayList<Client> o){
+        for (int i = 0; i < o.size(); i++) {
+            System.out.println(o.get(i));
+        }
+    }
+
+    public static void clientsSort (ArrayList<Client> o){
+        Collections.sort(o, Comparator.comparing(Client::getYear));
+
+    }
+
+    public static void clientsFilter (ArrayList<Client> o){
+        Iterator<Client> iterator = o.iterator();
+        while (iterator.hasNext()){
+            Client client = iterator.next();
+            if (client instanceof ClientFL) {
+                if (((ClientFL<?>) client).getSex().equals(Sex.FEMALE)) {
+                    iterator.remove();
+                }
+            }
+            else
+                iterator.remove();
+        }
+    }
 }
 
 
